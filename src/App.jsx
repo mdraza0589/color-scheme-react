@@ -2,19 +2,9 @@ import React from 'react'
 import './App.css'
 import { useState } from 'react'
 function App() {
-  let [color, setcolor] = useState('lightgreen')
+  let colors = ['red', 'blue', 'yellow', 'purple', 'orange', 'lightgreen', 'green', 'lightyellow', 'white',]
 
-  let [btnColor, setBtnColor] = useState([
-    { colorName: 'red' },
-    { colorName: 'blue' },
-    { colorName: 'yellow' },
-    { colorName: 'purple' },
-    { colorName: 'orange' },
-    { colorName: 'lightgreen' },
-    { colorName: 'green' },
-    { colorName: 'lightyellow' },
-    { colorName: 'white' },
-  ])
+  let [color, setcolor] = useState('lightgreen')
 
   const handleColor = (newcolor) => {
     setcolor(newcolor)
@@ -24,8 +14,8 @@ function App() {
     <div className='container' style={{ backgroundColor: color }}>
       <div className="box" >
         {
-          btnColor.map((item, index) => (
-            <button key={index} onClick={() => handleColor(item.colorName)} style={{ backgroundColor: item.colorName }} >{item.colorName}</button>
+          colors.map((item, index) => (
+            <button key={index} onClick={() => handleColor(item)} style={{ backgroundColor: item }} >{item}</button>
           ))
         }
 
